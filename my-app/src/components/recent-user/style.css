@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card__container{
+    box-shadow: 3px 4px 17px 0px rgba(0,0,0,0.61);
+}
+.card__image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}

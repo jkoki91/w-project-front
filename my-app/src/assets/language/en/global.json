@@ -1,0 +1,42 @@
+{
+    "header": {
+        "hello-world": "Hello world"
+    },
+    "login": {
+        "email": "Email address",
+        "password": "Password",
+        "login": "Login",
+        "register": "Create an acount",
+        "pass": "Forgot your password?"
+    },
+    "register": {
+        "name": "Name",
+        "userName": "User name",
+        "email": "E-mail",
+        "password": "Password",
+        "register": "Log up",
+        "login": "Login"
+    },
+    "landing": {
+        "title": "Recent logins",
+        "addUser": "Click on your photo or add an account.",
+        "company": "Are you a company? Create a profile for your company"
+    },
+    "recent": "Add user",
+    "pageinfo": {
+        "titlea": "What is wallet-management and how does it work?",
+        "title1a": "Register",
+        "info1a": "The first step to enjoy the benefits of wallet-management is to be registered",
+        "title2a": "What is it?",
+        "info2a": "wallet-management is a tool to manage your expenses and investments privately and to share the content you want to make public",
+        "title3a": "How does it work?",
+        "info3a": "We can follow profiles of other users and imitate the movements in their financial management, the content of these profiles may have a cost at the choice of the user who publishes it",
+        "titleb": "Why use wallet-management?",
+        "title1b": "Economic Benefits",
+        "info1b": "Controlling personal expenses and income is the basis of a coherent and controlled economy",
+        "title2b": "Learn",
+        "info12b": "The possibility of being able to follow the recommendations and movements of experts allows our information in this sector to cultivate a firm base of knowledge",
+        "title3b": "Earn money",
+        "info3b": "The content you publish can only be seen by partners, position yourself in the rankings and get partners to subscribe to your publications"
+    }
+}
