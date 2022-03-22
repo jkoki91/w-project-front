@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#es__button{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: fit-content;
+    padding: 2px;
+    padding-right: 4px;
+}
+#en__button{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: fit-content;
+    padding: 2px;
+    padding-left: 4px;
+}
