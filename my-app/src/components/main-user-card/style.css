@@ -18,8 +18,14 @@
 
 .avatar__image{
     width: 50%;
-    border-radius: 50%;
     position: relative;
     top: 30px; 
     left: 25%;
 }
+/* .avatar__image.avatar__image {
+    width: 50%;
+    border-radius: 90% !important;
+    position: relative;
+    top: 30px;
+    left: 25%;
+} */

@@ -38,5 +38,20 @@
         "info2b":"La posibilidad de poder seguir las recomendaciones y movimientos de expertos permite que nuestra información en este sector cultive una base firme de conocimiento",
         "title3b":"Gana dinero",
         "info3b":"El contenido que se publica puede ser solo visible por socios, posicionate en los rankins y consigue socios que se suscriban a tus publicaciones"
+    },
+    "modal":"Inserte sus datos",
+    "landin-header":"Registro",
+    "header":{
+        "profile":"Perfil",
+        "notifications":"Notificaciones",
+        "settings":"Ajustes",
+        "search": "Buscar"
+    },
+    "main-card":{
+        "follow":"Personas a las que sigo",
+        "followers":"Personas que me siguen",
+        "web":"Sitio web"
     }
+
+
 }

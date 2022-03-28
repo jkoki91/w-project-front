@@ -9,26 +9,15 @@ import Container from "react-bootstrap/esm/Container";
 
 function UserHome() {
     const navigate = useNavigate();
-    // const handlerReg = () => navigate('register');
     let [info, updateInfo] = useState([]);
 
-    // useEffect(() => {
-    //     fetch('http://localhost:4000/users')
-    //         .then(j => j.json())
-    //         .then(r => {
-    //             console.log(r)
-    //             updateInfo(r)
-    //         })
-    // }, [])
     return (
         <React.Fragment >
             <Header></Header>
             <h1>ESTO ES LA PAGINA DE USUARIO</h1>
-            {/* <Button onClick={handlerReg} variant="secondary" className='button'>hola</Button>{' '} */}
-            {/* <Outlet></Outlet> */}
             <Container className="d-flex flex-row">
                 <MainUserCard></MainUserCard>
-                <Container>
+                <Container className="col-md-8">
                     <Post></Post>
                 </Container>
             </Container>

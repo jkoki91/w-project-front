@@ -18,13 +18,15 @@ const darkTheme={
 
 function ThemeProvider({children}){
     let [theme, updateTheme] = useState(lightTheme);
+    let [token,updateToken] = useState(localStorage.getItem('access_token'))
+    let [info, updateInfo] = useState()
     
     const changeTheme= ()=>{
         updateTheme(v=> v === lightTheme ? darkTheme : lightTheme)        
     }
 
     return(
-        <themeContext.Provider value={[theme, updateTheme, changeTheme]}>
+        <themeContext.Provider value={[theme, updateTheme, changeTheme,token, updateToken,info, updateInfo]}>
             {children}
         </themeContext.Provider>
     )

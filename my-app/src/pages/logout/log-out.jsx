@@ -7,26 +7,25 @@ import { themeContext } from "../../context/theme-context";
 import RecentUser from "../../components/recent-user/recent-user";
 import { useTranslation } from "react-i18next";
 import LandingHeader from "../../components/landing-header/landing-header";
-import'./style.css'
+import './style.css'
 import PageInfo from "../../components/page-info/page-info";
+import { Link } from "react-router-dom";
 
-function LandinPage() {
+function LogOut() {
     let [theme, updateTheme, changeTheme] = useContext(themeContext);
-    const [t,i18n] = useTranslation('global');
-    
+    const [t, i18n] = useTranslation('global');
+
     return (
         <React.Fragment>
             <LandingHeader></LandingHeader>
             <Container fluid className={`bg-${theme.light} d-flex flex-rown`}>
-                <Container className="m-0">
-                    <h1>w-management</h1>
+                <Container className="m-0 mb-5">
+                    <h1>Sesion cerrada correctamente</h1>
                     <h3>{t('landing.title')}</h3>
                     <p>{t('landing.addUser')}</p>
-                    <RecentUser></RecentUser>
-                </Container>
-                <Container className="d-flex flex-column align-items-center justify-content-center m-0">
-                    <Login></Login>
-                    <p>{t('landing.company')}</p>
+                    <Link Style="text-decoration: none" to="/">
+                        <RecentUser></RecentUser>
+                    </Link>
                 </Container>
             </Container>
             <PageInfo></PageInfo>
@@ -35,4 +34,4 @@ function LandinPage() {
     )
 }
 
-export default LandinPage;
+export default LogOut;

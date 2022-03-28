@@ -8,29 +8,36 @@ import Register from './components/register/register';
 import Validate from './pages/validate/validate';
 import ProtectedPage from './components/protected-route/protected-route';
 import UserPage from './pages/user-page/user-page';
-import Edit from './components/edit/edit';
+import UploadFiles from './components/upload-files/upload-files';
+import LogOut from './pages/logout/log-out';
+import Users from './pages/users/users';
+// import Edit from './components/edit/edit';
 
 function App() {
+  let token = localStorage.getItem('access_token')
+  
   return (
     <React.Fragment>
       <BrowserRouter>
         <ThemeProvider>
           <Routes>
-            <Route path="/" element={<LandinPage />}></Route>
+            <Route path="/" element={token?<UserHome />:<LandinPage />}></Route>
             <Route path="user" element={
               <ProtectedPage>
                 <UserHome />
               </ProtectedPage>
             }></Route>
+            <Route path='/logout' element={<LogOut />}></Route>
             <Route path="user/page" element={
               <ProtectedPage>
                 <UserPage />
               </ProtectedPage>
             }></Route>
-            <Route path='/edit' element={<Edit />}></Route>
-            {/* <Route path="user/register" element={<Register />}></Route> */}
+            <Route path='/files' element={<UploadFiles />}></Route>
             <Route path="register" element={<Register />}></Route>
+            <Route path="users" element={<Users />}></Route>
             <Route path='/validate' element={<Validate />}></Route>
+            {/* <Route path='/*' element={<Validate />}></Route> */}
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

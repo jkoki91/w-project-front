@@ -38,5 +38,18 @@
         "info12b": "The possibility of being able to follow the recommendations and movements of experts allows our information in this sector to cultivate a firm base of knowledge",
         "title3b": "Earn money",
         "info3b": "The content you publish can only be seen by partners, position yourself in the rankings and get partners to subscribe to your publications"
+    },
+    "modal":"Insert your info",
+    "landin-header":"Logup",
+    "header":{
+        "profile":"Profile",
+        "notifications":"Notifications",
+        "settings":"Settings",
+        "search": "Search"
+    },
+    "main-card":{
+        "follow":"Follow",
+        "followers":"Followers",
+        "web":"Web site"
     }
 }
