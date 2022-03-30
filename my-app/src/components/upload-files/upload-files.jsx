@@ -30,7 +30,6 @@ function UploadFiles({ onAction }) {
         console.log("Form submitted")
         // new line added
         fetch(`http://localhost:4000/users/upload/${info._id}`, {
-            // method: 'POST',
             method: 'PATCH',
             body: formData,
             headers: {

@@ -17,10 +17,11 @@ import React from "react";
 import Header from "../../components/header/header";
 import Post from "../../components/post/post";
 import UploadFiles from "../../components/upload-files/upload-files";
+import NewPost from "../../components/new-post/new-post";
 
 function UserPage() {
     const navigate = useNavigate();
-    let [theme, updateTheme, changeTheme, token, updateToken,info, updateInfo] = useContext(themeContext);
+    let [theme, updateTheme, changeTheme, token, updateToken, info, updateInfo] = useContext(themeContext);
     // let [info, updateInfo] = useState()
     // console.log(token);
     useEffect(() => {
@@ -34,7 +35,7 @@ function UserPage() {
                 updateInfo(data)
 
             })
-    }, [])
+    }, [])//obtener informacion del usuario
     const handleDelete = () => {
         fetch('http://localhost:4000/users/crud', {
             method: 'DELETE',
@@ -46,14 +47,13 @@ function UserPage() {
                 localStorage.removeItem('access_token')
                 navigate('/')
             })
-    }
+    }//dar de baja al usuario
     const handleCloseSesion = () => {
         localStorage.removeItem('access_token')
         updateToken('')
         navigate('/logout')
     }
-    // info?console.log(info.name):console.log('chile marica')
-    // console.log(info) 
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const [campo, setCampo] = useState('');
@@ -96,12 +96,12 @@ function UserPage() {
             )
 
         }
-    }
-    const handleAction = ()=>{
+    }//modales para modificar campos
+    const handleAction = () => {
         setShow(false)
         window.location.reload(true);
     }
-    const handleChange = e => { 
+    const handleChange = e => {
         e.preventDefault()
         const setField = {
             data: e.target.data.value,
@@ -123,7 +123,7 @@ function UserPage() {
                 window.location.reload(true);
                 // navigate('/user/page')
             })
-    }
+    } //modificar un campo
 
     const handleShow1 = () => {
         setShow(true)
@@ -143,6 +143,37 @@ function UserPage() {
         setShow(true)
         setCampo('age')
     }
+    const [infoPosts, updateInfoPosts] = useState()
+    useEffect(() => { // Aqui se obtiene el ID de la coleccion de publicaciones para subir la publicación al sitio adecuado
+        fetch('http://localhost:4000/users/posts', {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` }
+        })
+            .then(j => j.json())
+            .then(data => {
+                console.log(data)
+                updateInfoPosts(data)
+            })
+    }, [])
+
+    const [showPost, setShowPost] = useState(false);
+    const handleClosePost = () => setShowPost(false);
+    const modalPost = () => {
+        return (
+            <Modal centered show={showPost} onHide={handleClosePost}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Cree su nuevo post</Modal.Title>
+                    <NewPost userId={info._id} posts={info.posts}></NewPost>
+                </Modal.Header>
+
+            </Modal>
+        )
+    }
+    const handlePost = () => {
+        setShowPost(true)
+        
+    }
+
 
     return (
         info ?
@@ -151,10 +182,11 @@ function UserPage() {
                 <h1>ESTO ES LA PAGINA DEL PERFIL DEL USUARIO</h1>
                 <Container className="d-flex flex-row">
                     {modal()}
+                    {modalPost()}
                     <Col md={4}>
                         <Card className='card__container' >
                             <Container className={`decoration__container bg-${theme.primary}`}></Container>
-                            <Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`??avatar} className='avatar__image'></Image>} />
+                            {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
                             <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
                                 <Button className="py-0" onClick={handleShow3}>Editar imagen</Button>
                                 {info ? <Card.Title>{info.name}</Card.Title> : ''}
@@ -183,12 +215,18 @@ function UserPage() {
                         </Card>
                     </Col >
                     <Container className="col-md-8">
-                        <Post></Post>
+                        <Button className="mx-2" onClick={handlePost}>Nueva publicación</Button>
+                        {infoPosts?
+                            infoPosts.posts.map((a,i)=>
+                                // console.log(a.title,a.text,a.img)
+                                <Post key={i} title={a.title} text={a.text} img={a.img}></Post>
+                            )                        
+                        :'cargando'}
                     </Container>
                 </Container >
             </React.Fragment>
             : 'cargando'
-    )
+    )//el return de la página
 }
 
 export default UserPage;

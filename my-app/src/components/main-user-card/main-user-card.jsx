@@ -31,7 +31,8 @@ export default function MainUserCard() {
         <Col md={4}>
             <Card className='card__container' >
                 <Container className={`decoration__container bg-${theme.primary}`}></Container>
-                {/* <Card.Img as={() => <Image roundedCircle src={info.img?`http://localhost:4000/static/${info.img}`:avatar} className='avatar__image'></Image>} /> */}
+                {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
+                {/* <Card.Img as={() => <Image roundedCircle src={info?`http://localhost:4000/static/${info.img}`:avatar} className='avatar__image'></Image>} /> */}
                 <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
                     {info ? <Card.Title>{info.name}</Card.Title> : ''}
                     <Card.Text>
