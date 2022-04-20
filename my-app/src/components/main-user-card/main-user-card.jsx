@@ -22,11 +22,11 @@ export default function MainUserCard() {
         })
             .then(j => j.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 updateInfo(data)
             })
     }, [])
-    console.log(info)
+    // console.log(info)
     return (
         <Col md={4}>
             <Card className='card__container' >
