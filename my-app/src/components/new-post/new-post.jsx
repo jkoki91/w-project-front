@@ -16,7 +16,7 @@ function NewPost(props) {
     const [uploadedFile, setUploadedFile] = useState('');
 
     useEffect(() => { // Aqui se obtiene el ID de la coleccion de publicaciones para subir la publicación al sitio adecuado
-        fetch('https://immense-ridge-09331.herokuapp.com/users/posts', {
+        fetch('http://localhost:4000/users/posts', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -33,7 +33,7 @@ function NewPost(props) {
         const token = localStorage.getItem('access_token')
         const formData = new FormData(e.target);
         console.log("Form submitted")
-        fetch(`https://immense-ridge-09331.herokuapp.com/post/posts/${info._id}`, { //aqui se añade un post al array de publicaciones, hay que modificarlo para que traiga el array y le haces un push
+        fetch(`http://localhost:4000/post/posts/${info._id}`, { //aqui se añade un post al array de publicaciones, hay que modificarlo para que traiga el array y le haces un push
             method: 'PATCH',
             body: formData,
             headers: {

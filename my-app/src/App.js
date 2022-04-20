@@ -11,6 +11,9 @@ import UserPage from './pages/user-page/user-page';
 import UploadFiles from './components/upload-files/upload-files';
 import LogOut from './pages/logout/log-out';
 import Users from './pages/users/users';
+import Privacy from './pages/privacy/privacy';
+import Cookies from './pages/cookies/cookies';
+import NotFound from './pages/not-found/not-found';
 // import Edit from './components/edit/edit';
 
 function App() {
@@ -37,6 +40,9 @@ function App() {
             <Route path="register" element={<Register />}></Route>
             <Route path="users" element={<Users />}></Route>
             <Route path='/validate' element={<Validate />}></Route>
+            <Route path='/privacy' element={<Privacy />}></Route>
+            <Route path='/cookies' element={<Cookies />}></Route>
+            <Route path='/*' element={<NotFound />}></Route>
             {/* <Route path='/*' element={<Validate />}></Route> */}
           </Routes>
         </ThemeProvider>

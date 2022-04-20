@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import LandingHeader from "../../components/landing-header/landing-header";
 import'./style.css'
 import PageInfo from "../../components/page-info/page-info";
+import Footer from "../../components/footer/footer";
 
 function LandinPage() {
     let [theme, updateTheme, changeTheme] = useContext(themeContext);
@@ -30,6 +31,7 @@ function LandinPage() {
                 </Container>
             </Container>
             <PageInfo></PageInfo>
+            <Footer></Footer>
         </React.Fragment>
 
     )

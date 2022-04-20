@@ -51,5 +51,11 @@
         "follow":"Follow",
         "followers":"Followers",
         "web":"Web site"
+    },
+    "footer":{
+        "consult":"Consult our ",
+        "priv":"privacy policy ",
+        "and": "and our ",
+        "cookies":"cookies policy."
     }
 }

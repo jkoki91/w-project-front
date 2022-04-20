@@ -51,6 +51,12 @@
         "follow":"Personas a las que sigo",
         "followers":"Personas que me siguen",
         "web":"Sitio web"
+    },
+    "footer":{
+        "consult":"Consulta nuestra ",
+        "priv":"política de privacidad ",
+        "and": "y nuestra ",
+        "cookies":"política de cookies."
     }
 
 

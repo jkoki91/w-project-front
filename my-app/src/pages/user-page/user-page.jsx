@@ -52,7 +52,7 @@ function UserPage() {
         localStorage.removeItem('access_token')
         updateToken('')
         navigate('/logout')
-    }
+    }//cerrar sesion
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -170,8 +170,7 @@ function UserPage() {
         )
     }
     const handlePost = () => {
-        setShowPost(true)
-        
+        setShowPost(true) 
     }
 
 
@@ -184,7 +183,7 @@ function UserPage() {
                     {modal()}
                     {modalPost()}
                     <Col md={4}>
-                        <Card className='card__container' >
+                        <Card id='card__container'>
                             <Container className={`decoration__container bg-${theme.primary}`}></Container>
                             {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
                             <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
