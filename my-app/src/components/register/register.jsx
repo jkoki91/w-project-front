@@ -7,8 +7,6 @@ import React, { useContext, useState } from 'react';
 import { themeContext } from '../../context/theme-context';
 // import { Outlet } from 'react-router-dom';
 
-
-
 function Register({onAction}) {
     const [t, i18n] = useTranslation('global');
     let [theme, updateTheme, changeTheme] = useContext(themeContext);

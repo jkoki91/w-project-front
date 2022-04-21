@@ -9,8 +9,8 @@ function Post(props) {
             {/* {posts.map((a,i) => */}
                 <Col md={12}>
                     <Card className='m-0'>
-                        <Card.Header as="h5">Featured</Card.Header>
-                        <Card.Img variant="top" src={`https://immense-ridge-09331.herokuapp.com/static/${props.img}`} />
+                        <Card.Header as="h5">{props.name}</Card.Header>
+                        <Card.Img variant="top" src={`http://localhost:4000/static/${props.img}`} />
                         <Card.Body>
                             <Card.Title>{props.title}</Card.Title>
                             <Card.Text>
