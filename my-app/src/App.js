@@ -25,20 +25,20 @@ function App() {
         <ThemeProvider>
           <Routes>
             <Route path="/" element={token?<UserHome />:<LandinPage />}></Route>
-            <Route path="user" element={
+            <Route path="/user" element={
               <ProtectedPage>
                 <UserHome />
               </ProtectedPage>
             }></Route>
             <Route path='/logout' element={<LogOut />}></Route>
-            <Route path="user/page" element={
+            <Route path="/user/page" element={
               <ProtectedPage>
                 <UserPage />
               </ProtectedPage>
             }></Route>
             <Route path='/files' element={<UploadFiles />}></Route>
             <Route path="register" element={<Register />}></Route>
-            <Route path="users" element={<Users />}></Route>
+            <Route path="/users" element={<Users />}></Route>
             <Route path='/validate' element={<Validate />}></Route>
             <Route path='/privacy' element={<Privacy />}></Route>
             <Route path='/cookies' element={<Cookies />}></Route>
