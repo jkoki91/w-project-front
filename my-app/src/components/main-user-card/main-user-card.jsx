@@ -22,29 +22,29 @@ export default function MainUserCard() {
         })
             .then(j => j.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 updateInfo(data)
             })
     }, [])
     console.log(info)
-    return (
+    return ( 
         <Col md={4}>
             <Card className='card__container' >
-                <Container className={`decoration__container bg-${theme.primary}`}></Container>
+                <Container className={`decoration__container bg-${theme.header}`} id="main__decoration__container"></Container>
                 {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
                 {/* <Card.Img as={() => <Image roundedCircle src={info?`http://localhost:4000/static/${info.img}`:avatar} className='avatar__image'></Image>} /> */}
                 <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
-                    {info ? <Card.Title>{info.name}</Card.Title> : ''}
-                    <Card.Text>
+                    {info ? <Card.Title className='mt-3'>{info.name}</Card.Title> : ''}
+                    <Card.Text className='ms-3'>
                         Breve descripción del usuario.Breve descripción del usuario.Breve descripción del usuario.
                     </Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem>{t('main-card.follow')}</ListGroupItem>
-                    <ListGroupItem>{t('main-card.followers')}</ListGroupItem>
-                </ListGroup>
+                    <ListGroupItem className='ms-3'>{t('main-card.follow')}: {info?info.follow.length:''}</ListGroupItem>
+                    <ListGroupItem className='ms-3'>{t('main-card.followers')}: {info?info.followers.length:''}</ListGroupItem>
+                </ListGroup> 
                 <Card.Body className='d-flex flex-row'>
-                    <Card.Text className='me-2 mb-0'>
+                    <Card.Text className='me-2 mb-0 ms-3'>
                         {t('main-card.web')}
                     </Card.Text>
                     <Card.Link href="#">Link</Card.Link>

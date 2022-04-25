@@ -7,8 +7,6 @@ import React, { useContext, useState } from 'react';
 import { themeContext } from '../../context/theme-context';
 // import { Outlet } from 'react-router-dom';
 
-
-
 function Register({onAction}) {
     const [t, i18n] = useTranslation('global');
     let [theme, updateTheme, changeTheme] = useContext(themeContext);
@@ -39,7 +37,7 @@ function Register({onAction}) {
     }
     return (
         <React.Fragment>
-            <Form onSubmit={handlerOnSubmit}>
+            <Form className={`bg-${theme.background}`} onSubmit={handlerOnSubmit}>
                 <FloatingLabel controlId="floatingName" label={t("register.name")} className="all__input">
                     <Form.Control type="text" placeholder="name" name='name' />
                 </FloatingLabel>
