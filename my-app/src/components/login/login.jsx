@@ -9,10 +9,13 @@ import Container from 'react-bootstrap/esm/Container';
 import Modal from 'react-bootstrap/Modal'
 import { useState } from 'react';
 import Register from '../register/register';
+import { useContext } from "react";
+import { themeContext } from "../../context/theme-context";
 
 function Login() {
     const [t, i18n] = useTranslation('global');
     const navigate = useNavigate()
+    let [theme, updateTheme, changeTheme] = useContext(themeContext);
     // const handlerReg = () => navigate('/register');
     const handleOnSubmit = e => {
         e.preventDefault()
@@ -60,8 +63,8 @@ function Login() {
             <Button onClick={handleShow} variant="secondary" className='button'>{t('login.register')}</Button>{' '}
             
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{t('modal')}</Modal.Title>
+                <Modal.Header className={`bg-${theme.background}`} closeButton>
+                    <Modal.Title className={`text-${theme.leters}`}>{t('modal')}</Modal.Title>
                 </Modal.Header>
                 <Register onAction={handleAction} className="register__container"></Register>
                 

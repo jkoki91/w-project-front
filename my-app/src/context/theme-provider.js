@@ -1,18 +1,31 @@
 import { useState } from "react";
 import { themeContext } from "./theme-context"
 
+// const lightTheme={
+//     primary:"primary",
+//     succes:"success",
+//     info:"warning",
+//     light:"light"
+// }
+
+// const darkTheme={
+//     primary:"secondary",
+//     succes:"info",
+//     info:"danger",
+//     light:"dark"
+// } 
 const lightTheme={
-    primary:"primary",
-    succes:"success",
-    info:"warning",
-    light:"light"
+    header:"primary",
+    leters:"success",
+    background:"warning",
+    elements:"light"
 }
 
 const darkTheme={
-    primary:"secondary",
-    succes:"info",
-    info:"danger",
-    light:"dark"
+    header:"secondary",
+    leters:"info",
+    background:"danger",
+    elements:"dark"
 } 
 
 

@@ -24,14 +24,14 @@
     },
     "recent": "Add user",
     "pageinfo": {
-        "titlea": "What is wallet-management and how does it work?",
+        "titlea": "What is w-Network and how does it work?",
         "title1a": "Register",
-        "info1a": "The first step to enjoy the benefits of wallet-management is to be registered",
+        "info1a": "The first step to enjoy the benefits of w-Network is to be registered",
         "title2a": "What is it?",
-        "info2a": "wallet-management is a tool to manage your expenses and investments privately and to share the content you want to make public",
+        "info2a": "w-Network is a tool to manage your expenses and investments privately and to share the content you want to make public",
         "title3a": "How does it work?",
         "info3a": "We can follow profiles of other users and imitate the movements in their financial management, the content of these profiles may have a cost at the choice of the user who publishes it",
-        "titleb": "Why use wallet-management?",
+        "titleb": "Why use w-Network?",
         "title1b": "Economic Benefits",
         "info1b": "Controlling personal expenses and income is the basis of a coherent and controlled economy",
         "title2b": "Learn",
@@ -51,5 +51,16 @@
         "follow":"Follow",
         "followers":"Followers",
         "web":"Web site"
+    },
+    "footer":{
+        "consult":"Consult our ",
+        "priv":"privacy policy ",
+        "and": "and our ",
+        "cookies":"cookies policy."
+    },
+    "home":{
+        "hello": "Hello ",
+        "posts": " these are the posts of the people you follow.",
+        "posts2": " these are your posts."
     }
 }

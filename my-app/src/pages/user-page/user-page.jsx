@@ -18,9 +18,11 @@ import Header from "../../components/header/header";
 import Post from "../../components/post/post";
 import UploadFiles from "../../components/upload-files/upload-files";
 import NewPost from "../../components/new-post/new-post";
+import { useTranslation } from "react-i18next";
 
 function UserPage() {
     const navigate = useNavigate();
+    const [t, i18n] = useTranslation('global');
     let [theme, updateTheme, changeTheme, token, updateToken, info, updateInfo] = useContext(themeContext);
     // let [info, updateInfo] = useState()
     // console.log(token);
@@ -52,7 +54,7 @@ function UserPage() {
         localStorage.removeItem('access_token')
         updateToken('')
         navigate('/logout')
-    }
+    }//cerrar sesion
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -170,52 +172,53 @@ function UserPage() {
         )
     }
     const handlePost = () => {
-        setShowPost(true)
-        
+        setShowPost(true) 
     }
 
 
     return (
         info ?
-            <React.Fragment >
+            <React.Fragment>
                 <Header></Header>
-                <h1>ESTO ES LA PAGINA DEL PERFIL DEL USUARIO</h1>
-                <Container className="d-flex flex-row">
+                <Container fluid className={`d-flex justify-content-end pe-5 bg-${theme.background}`}>
+                <h3 bg={`${theme.header}`} className={`text-${theme.leters} ms-5 mt-4 `}>{t('home.hello')} {info?info.name:''}, {t('home.posts2')}</h3>
+                </Container>
+                <Container fluid className={`p-0 gap-4 bg-${theme.background} d-flex flex-row`} id="main">
                     {modal()}
                     {modalPost()}
                     <Col md={4}>
-                        <Card className='card__container' >
-                            <Container className={`decoration__container bg-${theme.primary}`}></Container>
-                            {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
+                        <Card id='card__container' className="ms-5 p-3">
+                            <Container className={`decoration__container bg-${theme.header}`} id="decoration__container"></Container>
+                            {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image pb-2'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
                             <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
-                                <Button className="py-0" onClick={handleShow3}>Editar imagen</Button>
+                                <Button className="py-0 mb-2" onClick={handleShow3}>Editar imagen</Button>
                                 {info ? <Card.Title>{info.name}</Card.Title> : ''}
                                 <Card.Text>
                                     Breve descripción del usuario.Breve descripción del usuario.Breve descripción del usuario.
                                 </Card.Text>
                             </Card.Body>
-                            <ListGroup className="list-group-flush">
-                                <Container fluid className="d-flex flex-row align-items-center gap-3 my-1">
+                            <ListGroup className="list-group-flush py-2 ">
+                                <Container fluid className="d-flex flex-row align-items-center justify-content-between gap-3 my-1 px-5">
                                     <h6 className="m-0">Nombre:</h6><p className="m-0">{info.name}</p><Button className="py-0" onClick={handleShow1}>Editar</Button>
                                 </Container>
-                                <Container fluid className="d-flex flex-row align-items-center gap-3 my-1">
+                                <Container fluid className="d-flex flex-row align-items-center justify-content-between gap-3 my-1 px-5">
                                     <h6 className="m-0">Nombre de usuario:</h6><p className="m-0">{info.username}</p><Button className="py-0" onClick={handleShow2}>Editar</Button>
                                 </Container>
-                                <Container fluid className="d-flex flex-row align-items-center gap-3 my-1">
+                                <Container fluid className="d-flex flex-row align-items-center gap-3 my-1 px-5">
                                     <h6 className="m-0">Email:</h6><p className="m-0">{info.email}</p>
                                 </Container>
-                                <Container fluid className="d-flex flex-row align-items-center gap-3 my-1">
+                                <Container fluid className="d-flex flex-row align-items-center justify-content-between gap-3 my-1 px-5">
                                     <h6 className="m-0">Edad:</h6><p className="m-0">{info.age}</p><Button className="py-0" onClick={handleShow4}>Editar</Button>
                                 </Container>
                             </ListGroup>
-                            <Card.Body className='d-flex flex-row'>
+                            <Card.Body className='d-flex flex-row justify-content-between'>
                                 <Button className="mx-2" onClick={handleDelete}>Eliminar usuario</Button>
                                 <Button className="mx-2" onClick={handleCloseSesion}>Cerrar sesión</Button>
                             </Card.Body>
                         </Card>
                     </Col >
-                    <Container className="col-md-8">
-                        <Button className="mx-2" onClick={handlePost}>Nueva publicación</Button>
+                    <Container className="col-md-8 m-0 p-0 pe-3" id="container__posts">
+                        <Button className="mx-2 mb-4" onClick={handlePost}>Nueva publicación</Button>
                         {infoPosts?
                             infoPosts.posts.map((a,i)=>
                                 // console.log(a.title,a.text,a.img)

@@ -1,11 +1,15 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/esm/Button';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { themeContext } from '../../context/theme-context';
 import { useEffect } from 'react';
+import { Image } from "react-bootstrap";
+import avatar from '../../assets/pictures/blank-profile.webp';
 
 function UserViewCard(props) {
     let [theme, updateTheme, changeTheme, token, updateToken, info, updateInfo] = useContext(themeContext);
+    let [disp,setDisp]=useState()
+    let [disp2,setDisp2]=useState('none')
 
     useEffect(() => {
         fetch('http://localhost:4000/users', {
@@ -20,6 +24,8 @@ function UserViewCard(props) {
     }, [])
     const handlerClick = () => {
         // console.log(info.follow)
+        setDisp('none')
+        setDisp2()
         const idFollow = props.id
         // console.log(idFollow) 
         info.follow.push(idFollow)
@@ -59,17 +65,20 @@ function UserViewCard(props) {
             .then(j => j.json())
             .then(d => {
                 console.log(d)
-            })
+            }) 
     }
     return (
-        <Card className='d-flex flex-row mt-2' style={{ width: '28rem' }}>
-            <Card.Img style={{ width: '40%' }} variant="top" src={props.img} />
-            <Card.Body style={{ width: '60%' }}>
+        <Card className='d-flex flex-row mt-2 mb-3 p-2' style={{ width: '28rem' }}>
+            {props.img?
+            <Card.Img style={{ width: '35%' }} variant="top" src={`http://localhost:4000/static/${props.img}`}/>:
+            <Card.Img style={{ width: '35%' }} variant="top" src={avatar}/>}
+            <Card.Body className='ms-5' style={{ width: '60%' }}>
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text>
                     {props.username}
                 </Card.Text>
-                <Button onClick={handlerClick} variant="primary">Follow</Button>
+                <Button onClick={handlerClick} className={`d-${disp}`} variant="primary">Follow</Button>
+                <Button onClick={()=>{}} className={`d-${disp2}`} variant="primary">UnFollow</Button>
             </Card.Body>
         </Card>
     )
