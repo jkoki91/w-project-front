@@ -3,14 +3,18 @@ import Footer from '../../components/footer/footer';
 import LandingHeader from '../../components/landing-header/landing-header';
 import Col from 'react-bootstrap/Col'
 import './style.css';
+import { useContext } from 'react';
+import { themeContext } from '../../context/theme-context';
 
 
 
 export default function Privacy() {
+    let [theme, updateTheme, changeTheme, token, updateToken, info, updateInfo] = useContext(themeContext);
+
     return (
         <React.Fragment>
             <LandingHeader></LandingHeader>
-            <Col className="ms-5 mt-3 className">
+            <Col className={`ps-5 pt-3 mb-0 pe-5 className text-${theme.leters} bg-${theme.background}`}>
                 <h1>Privacy Policy</h1>
                 <p>Last updated: March 29, 2022</p>
                 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
@@ -195,8 +199,8 @@ export default function Privacy() {
                 <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
                 <h1>Contact Us</h1>
                 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-                <ul>
-                    <li>By email: w-management@gmail.com</li>
+                <ul className='mb-0 pb-4'>
+                    <li className='mb-0'>By email: w-management@gmail.com</li>
                 </ul>
             </Col>
             <Footer></Footer>

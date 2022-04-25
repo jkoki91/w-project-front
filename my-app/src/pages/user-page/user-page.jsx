@@ -178,17 +178,17 @@ function UserPage() {
 
     return (
         info ?
-            <>
+            <React.Fragment>
                 <Header></Header>
                 <Container fluid className={`d-flex justify-content-end pe-5 bg-${theme.background}`}>
-                <h3 bg={`${theme.header}`} className={`text-${theme.leters} ms-5 mt-4 `}>{t('home.hello')} {info?info.name:''} {t('home.posts')}</h3>
+                <h3 bg={`${theme.header}`} className={`text-${theme.leters} ms-5 mt-4 `}>{t('home.hello')} {info?info.name:''}, {t('home.posts2')}</h3>
                 </Container>
-                <Container fluid className={`p-0 gap-4 bg-${theme.background} d-flex flex-row`}>
+                <Container fluid className={`p-0 gap-4 bg-${theme.background} d-flex flex-row`} id="main">
                     {modal()}
                     {modalPost()}
                     <Col md={4}>
                         <Card id='card__container' className="ms-5 p-3">
-                            <Container className={`decoration__container bg-${theme.primary}`}></Container>
+                            <Container className={`decoration__container bg-${theme.header}`} id="decoration__container"></Container>
                             {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image pb-2'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
                             <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
                                 <Button className="py-0 mb-2" onClick={handleShow3}>Editar imagen</Button>
@@ -227,7 +227,7 @@ function UserPage() {
                         :'cargando'}
                     </Container>
                 </Container >
-            </>
+            </React.Fragment>
             : 'cargando'
     )//el return de la página
 }

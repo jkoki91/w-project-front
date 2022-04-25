@@ -60,7 +60,8 @@
     },
     "home":{
         "hello": "Hola ",
-        "posts": " estas son las publicaciones de las personas a las que sigues."
+        "posts": " estas son las publicaciones de las personas a las que sigues.",
+        "posts2": " estas son las publicaciones que has hecho."
     }
 
 }

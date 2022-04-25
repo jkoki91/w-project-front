@@ -9,6 +9,7 @@ import Container from "react-bootstrap/esm/Container";
 import { useContext } from "react";
 import { themeContext } from "../../context/theme-context";
 import { useTranslation } from "react-i18next";
+import "./style.css"
 
 function UserHome() {
     const navigate = useNavigate();
@@ -70,7 +71,7 @@ function UserHome() {
 
 
     return (
-        <Container fluid className={`p-0 gap-4 bg-${theme.background}`}>
+        <Container fluid className={`p-0 gap-4 bg-${theme.background}`} id="main">
             <Header></Header>
             <Container fluid className="d-flex justify-content-end pe-5">
                 <h3 bg={`${theme.header}`} className={`text-${theme.leters} ms-5 mt-4 `}>{t('home.hello')} {info?info.name:''} {t('home.posts')}</h3>

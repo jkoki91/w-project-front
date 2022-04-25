@@ -27,10 +27,10 @@ export default function MainUserCard() {
             })
     }, [])
     console.log(info)
-    return (
+    return ( 
         <Col md={4}>
             <Card className='card__container' >
-                <Container className={`decoration__container bg-${theme.header}`} id="decoration__container"></Container>
+                <Container className={`decoration__container bg-${theme.header}`} id="main__decoration__container"></Container>
                 {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
                 {/* <Card.Img as={() => <Image roundedCircle src={info?`http://localhost:4000/static/${info.img}`:avatar} className='avatar__image'></Image>} /> */}
                 <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
