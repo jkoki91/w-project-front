@@ -8,6 +8,9 @@
     /* height: 60vh; */
     min-height: fit-content;
 }
+#container__posts{
+    max-width: 65%;
+}
 
 .decoration__container{
     width: 100%;

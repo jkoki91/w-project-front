@@ -8,9 +8,11 @@ import Container from "react-bootstrap/esm/Container";
 // import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { themeContext } from "../../context/theme-context";
+import { useTranslation } from "react-i18next";
 
 function UserHome() {
     const navigate = useNavigate();
+    const [t, i18n] = useTranslation('global');
     // let [info, updateInfo] = useState([]);
     let [theme, updateTheme, changeTheme, token, updateToken, info, updateInfo] = useContext(themeContext);
     useEffect(() => {
@@ -68,10 +70,12 @@ function UserHome() {
 
 
     return (
-        <React.Fragment >
+        <Container fluid className={`p-0 gap-4 bg-${theme.background}`}>
             <Header></Header>
-            <h1>ESTO ES LA PAGINA DE USUARIO</h1>
-            <Container className="d-flex flex-row">
+            <Container fluid className="d-flex justify-content-end pe-5">
+                <h3 bg={`${theme.header}`} className={`text-${theme.leters} ms-5 mt-4 `}>{t('home.hello')} {info?info.name:''} {t('home.posts')}</h3>
+            </Container>
+            <Container fluid className={`d-flex gap-4 p-4 flex-row bg-${theme.background}`}>
                 <MainUserCard></MainUserCard>
                 <Container className="col-md-8">
                     {infoPosts ?
@@ -83,7 +87,7 @@ function UserHome() {
                         : 'cargando'}
                 </Container>
             </Container>
-        </React.Fragment>
+        </Container >
     )
 }
 

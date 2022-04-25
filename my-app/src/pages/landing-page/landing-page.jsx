@@ -12,22 +12,22 @@ import PageInfo from "../../components/page-info/page-info";
 import Footer from "../../components/footer/footer";
 
 function LandinPage() {
-    let [theme, updateTheme, changeTheme] = useContext(themeContext);
+    let [theme, updateTheme, changeTheme] = useContext(themeContext); 
     const [t,i18n] = useTranslation('global');
     
     return (
         <React.Fragment>
             <LandingHeader></LandingHeader>
-            <Container fluid className={`bg-${theme.light} d-flex flex-rown`}>
+            <Container fluid className={`bg-${theme.background} d-flex flex-rown`}>
                 <Container className="m-0">
-                    <h1>w-management</h1>
-                    <h3>{t('landing.title')}</h3>
-                    <p>{t('landing.addUser')}</p>
+                    <h1 className={`text-${theme.leters}`}>w-management</h1>
+                    <h3 className={`text-${theme.leters}`}>{t('landing.title')}</h3>
+                    <p className={`text-${theme.leters}`}>{t('landing.addUser')}</p>
                     <RecentUser></RecentUser>
                 </Container>
                 <Container className="d-flex flex-column align-items-center justify-content-center m-0">
                     <Login></Login>
-                    <p>{t('landing.company')}</p>
+                    <p className={`text-${theme.leters}`}>{t('landing.company')}</p>
                 </Container>
             </Container>
             <PageInfo></PageInfo>

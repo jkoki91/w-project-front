@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+@font-face {
+  font-family:butter ;
+  src: url("./assets/fonts/circula-medium.otf");
+}
+
+*{
+  font-family: butter;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

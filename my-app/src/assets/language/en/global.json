@@ -57,5 +57,9 @@
         "priv":"privacy policy ",
         "and": "and our ",
         "cookies":"cookies policy."
+    },
+    "home":{
+        "hello": "Hello ",
+        "posts": " these are the posts of the people you follow."
     }
 }

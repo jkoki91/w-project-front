@@ -5,12 +5,12 @@
 }
 
 .card__container{
-    height: 60vh;
+    min-height: fit-content;
 }
 
-.decoration__container{
+#decoration__container{
     width: 100%;
-    height: 100px;
+    height: 11rem;
     position: absolute;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

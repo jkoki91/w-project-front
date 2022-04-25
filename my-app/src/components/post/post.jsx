@@ -8,15 +8,15 @@ function Post(props) {
         <>
             {/* {posts.map((a,i) => */}
                 <Col md={12}>
-                    <Card className='m-0'>
-                        <Card.Header as="h5">{props.name}</Card.Header>
-                        <Card.Img variant="top" src={`http://localhost:4000/static/${props.img}`} />
-                        <Card.Body>
+                    <Card className='m-0 me-3 mb-5'>
+                        <Card.Header as="h5" className='p-3 ps-3'>{props.name}</Card.Header>
+                        <Card.Img className='p-3' variant="top" src={`http://localhost:4000/static/${props.img}`} />
+                        <Card.Body className='ms-4' >
                             <Card.Title>{props.title}</Card.Title>
                             <Card.Text>
                                 {props.text}
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            <Button className='mb-4 ms-3' variant="primary">Share</Button>
                         </Card.Body>
                     </Card>
                 </Col>

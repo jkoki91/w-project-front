@@ -37,7 +37,7 @@ function Register({onAction}) {
     }
     return (
         <React.Fragment>
-            <Form onSubmit={handlerOnSubmit}>
+            <Form className={`bg-${theme.background}`} onSubmit={handlerOnSubmit}>
                 <FloatingLabel controlId="floatingName" label={t("register.name")} className="all__input">
                     <Form.Control type="text" placeholder="name" name='name' />
                 </FloatingLabel>
