@@ -20,7 +20,7 @@ function LandinPage() {
             <LandingHeader></LandingHeader>
             <Container fluid className={`bg-${theme.background} d-flex flex-rown`}>
                 <Container className="m-0">
-                    <h1 className={`text-${theme.leters}`}>w-management</h1>
+                    <h1 className={`text-${theme.leters}`}>w-Network</h1>
                     <h3 className={`text-${theme.leters}`}>{t('landing.title')}</h3>
                     <p className={`text-${theme.leters}`}>{t('landing.addUser')}</p>
                     <RecentUser></RecentUser>

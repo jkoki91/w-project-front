@@ -38,7 +38,7 @@ export default function LandingHeader() {
                     </Container>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
-                        <Navbar.Brand href="/" className={`text-${theme.leters}`}>wallet-management</Navbar.Brand>
+                        <Navbar.Brand href="/" className={`text-${theme.leters}`}>w-Network</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link className={`text-${theme.leters}`} onClick={handleShow}>{t('landin-header')}</Nav.Link>
                         </Nav>
