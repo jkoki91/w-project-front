@@ -18,7 +18,9 @@
     justify-content: center;
     /* align-items: center; */
 }
-
+.register__container{
+    width: 100%;
+}
 .button{
     margin: 20px;
 }

@@ -1,14 +1,17 @@
 import { useEffect } from "react";
 import Button from "react-bootstrap/esm/Button";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 
 
 function Validate() {
     const [queryParams] = useSearchParams();
     const param = queryParams.get('token')
+    const navigate = useNavigate()
 
-   
+    const handleValidate = ()=>{
+        navigate('/')
+   }
     useEffect(() => {
         fetch(`http://localhost:4000/auth/validate?token=${param}`)
             .then(d => d.json())
@@ -17,7 +20,7 @@ function Validate() {
     },[]);
 
 
-    return <Button  /* onClick={handleValidate} */>Volver</Button>
+    return <Button onClick={handleValidate}>Volver</Button>
 
 
 }

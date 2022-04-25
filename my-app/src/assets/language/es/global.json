@@ -24,19 +24,44 @@
     },
     "recent":"Agregar usuario",
     "pageinfo": {
-        "titlea":"¿Qué es y como funciona wallet-management?",
+        "titlea":"¿Qué es y como funciona w-Network?",
         "title1a":"Registrarse",
-        "info1a":"El primer paso para disfrutar de las ventajas de wallet-management es estar registrado",
+        "info1a":"El primer paso para disfrutar de las ventajas de w-Network es estar registrado",
         "title2a":"¿Qué es?",
-        "info2a":"wallet-management es una herramienta para poder gestionar tus gastos e inversiones de manera privada y poder compartir el contenido que deseemos hacer público",
+        "info2a":"w-Network es una herramienta para poder gestionar tus gastos e inversiones de manera privada y poder compartir el contenido que deseemos hacer público",
         "title3a":"¿Cómo funciona?",
         "info3a":"Podemos seguir perfiles de otros usuarios e imitar los movimientos en sus gestiones financieras, el contenido de estos perfiles podrá tener un coste a elección del usuario que lo publica",
-        "titleb":"¿Por qué utilizar wallet-management?",
+        "titleb":"¿Por qué utilizar w-Network?",
         "title1b":"Beneficios economicos",
         "info1b":"Tener controlados los gastos e ingresos personales es la base de una economía coherente y controlada",
         "title2b":"Aprende",
         "info2b":"La posibilidad de poder seguir las recomendaciones y movimientos de expertos permite que nuestra información en este sector cultive una base firme de conocimiento",
         "title3b":"Gana dinero",
         "info3b":"El contenido que se publica puede ser solo visible por socios, posicionate en los rankins y consigue socios que se suscriban a tus publicaciones"
+    },
+    "modal":"Inserte sus datos",
+    "landin-header":"Registro",
+    "header":{
+        "profile":"Perfil",
+        "notifications":"Notificaciones",
+        "settings":"Ajustes",
+        "search": "Buscar"
+    },
+    "main-card":{
+        "follow":"Personas a las que sigo",
+        "followers":"Personas que me siguen",
+        "web":"Sitio web"
+    },
+    "footer":{
+        "consult":"Consulta nuestra ",
+        "priv":"política de privacidad ",
+        "and": "y nuestra ",
+        "cookies":"política de cookies."
+    },
+    "home":{
+        "hello": "Hola ",
+        "posts": " estas son las publicaciones de las personas a las que sigues.",
+        "posts2": " estas son las publicaciones que has hecho."
     }
+
 }

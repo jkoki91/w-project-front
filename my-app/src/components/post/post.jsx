@@ -1,24 +1,26 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/esm/Button';
+import {Col} from 'react-bootstrap'
 
-
-function Post() {
-    let posts = ['post1','post2','post3','post4','post5','post6']
+function Post(props) {
+    let posts = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6']
     return (
         <>
-        {posts.map(a=> 
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>{a}</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-        )}
+            {/* {posts.map((a,i) => */}
+                <Col md={12}>
+                    <Card className='m-0 me-3 mb-5'>
+                        <Card.Header as="h5" className='p-3 ps-3'>{props.name}</Card.Header>
+                        <Card.Img className='p-3' variant="top" src={`http://localhost:4000/static/${props.img}`} />
+                        <Card.Body className='ms-4' >
+                            <Card.Title>{props.title}</Card.Title>
+                            <Card.Text>
+                                {props.text}
+                            </Card.Text>
+                            <Button className='mb-4 ms-3' variant="primary">Share</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            {/* )} */}
         </>
     )
 }

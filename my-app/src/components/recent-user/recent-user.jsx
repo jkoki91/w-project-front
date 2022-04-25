@@ -13,7 +13,7 @@ export default function RecentUser() {
                 <Card.Img variant="top" style={{ width: '50px', height:'50px'}} src={image} />
             </Container>
             <Card.Body className='bg-primary d-flex justify-content-center align-items-center'  style={{ width: '100%', height:'15%'}}>
-                <Card.Title className='fs-6'>{t('recent')}</Card.Title>
+                <Card.Title Style="color: black" className='fs-6'>{t('recent')}</Card.Title>
             </Card.Body>
         </Card>
     )
