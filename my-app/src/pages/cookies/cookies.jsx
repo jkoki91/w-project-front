@@ -28,6 +28,7 @@ export default function Cookies() {
                 <ul>
                     <li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Cookies Policy) refers to Delorean FL.</li>
                     <li><strong>Cookies</strong> means small files that are placed on Your computer, mobile device or any other device by a website, containing details of your browsing history on that website among its many uses.</li>
+                    {/* <li><strong>Website</strong> refers to Delorean FL, accessible from <a href="http://localhost:3000/" rel="external nofollow noopener" target="_blank">http://localhost:3000/</a></li> */}
                     <li><strong>Website</strong> refers to Delorean FL, accessible from <a href="http://localhost:3000/" rel="external nofollow noopener" target="_blank">http://localhost:3000/</a></li>
                     <li><strong>You</strong> means the individual accessing or using the Website, or a company, or any legal entity on behalf of which such individual is accessing or using the Website, as applicable.</li>
                 </ul>

@@ -29,7 +29,8 @@ function UploadFiles({ onAction }) {
         // do something
         console.log("Form submitted")
         // new line added
-        fetch(`http://localhost:4000/users/upload/${info._id}`, {
+        // fetch(`http://localhost:4000/users/upload/${info._id}`, {
+        fetch(`https://mysterious-retreat-85632.herokuapp.com/users/upload/${info._id}`, {
             method: 'PATCH',
             body: formData,
             headers: {

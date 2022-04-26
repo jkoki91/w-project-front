@@ -17,7 +17,8 @@ function UserHome() {
     // let [info, updateInfo] = useState([]);
     let [theme, updateTheme, changeTheme, token, updateToken, info, updateInfo] = useContext(themeContext);
     useEffect(() => {
-        fetch('http://localhost:4000/users', {
+        // fetch('http://localhost:4000/users', {
+        fetch('https://mysterious-retreat-85632.herokuapp.com/users', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -34,7 +35,8 @@ function UserHome() {
             //     console.log(info.follow)
             info.follow.map((a, i) => {
                 setTimeout(() => {
-                    fetch(`http://localhost:4000/users/users/info/${a}`, {
+                    // fetch(`http://localhost:4000/users/users/info/${a}`, {
+                    fetch(`https://mysterious-retreat-85632.herokuapp.com/users/users/info/${a}`, {    
                         method: 'GET',
                         headers: { 'Authorization': `Bearer ${token}` }
                     })
@@ -43,7 +45,8 @@ function UserHome() {
                             // console.log(datas[0].username)
                             // console.log(datas[0].posts)
                             if (datas[0].posts) {
-                                fetch(`http://localhost:4000/post/follow/${datas[0].posts}`, {
+                                // fetch(`http://localhost:4000/post/follow/${datas[0].posts}`, {
+                                fetch(`https://mysterious-retreat-85632.herokuapp.com/post/follow/${datas[0].posts}`, {    
                                     method: 'GET',
                                     headers: { 'Authorization': `Bearer ${token}` }
                                 })

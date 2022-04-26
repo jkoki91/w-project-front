@@ -31,7 +31,7 @@ function App() {
               </ProtectedPage>
             }></Route>
             <Route path='/logout' element={<LogOut />}></Route>
-            <Route path="/user/page" element={
+            <Route path="/userpage" element={
               <ProtectedPage>
                 <UserPage />
               </ProtectedPage>

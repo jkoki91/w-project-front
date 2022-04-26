@@ -13,7 +13,8 @@ function Validate() {
         navigate('/')
    }
     useEffect(() => {
-        fetch(`http://localhost:4000/auth/validate?token=${param}`)
+        // fetch(`http://localhost:4000/auth/validate?token=${param}`)
+        fetch(`https://mysterious-retreat-85632.herokuapp.com/auth/validate?token=${param}`)
             .then(d => d.json())
             .then(data => console.log(data))
 
