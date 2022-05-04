@@ -23,8 +23,8 @@ function Users() {
         const search = e.target.search.value
         console.log(search)
 
-        // fetch(`http://localhost:4000/users/users/${search}`, {
-        fetch(`https://mysterious-retreat-85632.herokuapp.com/users/users/${search}`, {
+        fetch(`http://localhost:4000/users/users/${search}`, {
+        // fetch(`https://mysterious-retreat-85632.herokuapp.com/users/users/${search}`, {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })

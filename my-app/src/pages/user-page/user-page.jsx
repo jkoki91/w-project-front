@@ -27,8 +27,8 @@ function UserPage() {
     // let [info, updateInfo] = useState()
     // console.log(token);
     useEffect(() => {
-        // fetch('http://localhost:4000/users', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/users', {    
+        fetch('http://localhost:4000/users', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/users', {    
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -40,8 +40,8 @@ function UserPage() {
             })
     }, [])//obtener informacion del usuario
     const handleDelete = () => {
-        // fetch('http://localhost:4000/users/crud', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/users/crud', {
+        fetch('http://localhost:4000/users/crud', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/users/crud', {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -111,8 +111,8 @@ function UserPage() {
             data: e.target.data.value,
         }
         console.log(setField)
-        // fetch(`http://localhost:4000/users/${campo}/${info._id}`, {
-        fetch(`https://mysterious-retreat-85632.herokuapp.com/users/${campo}/${info._id}`, {
+        fetch(`http://localhost:4000/users/${campo}/${info._id}`, {
+        // fetch(`https://mysterious-retreat-85632.herokuapp.com/users/${campo}/${info._id}`, {
             method: 'PATCH',
             body: JSON.stringify(setField),
             headers: {
@@ -150,8 +150,8 @@ function UserPage() {
     }
     const [infoPosts, updateInfoPosts] = useState()
     useEffect(() => { // Aqui se obtiene el ID de la coleccion de publicaciones para subir la publicación al sitio adecuado
-        // fetch('http://localhost:4000/users/posts', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/users/posts', {    
+        fetch('http://localhost:4000/users/posts', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/users/posts', {    
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -193,8 +193,8 @@ function UserPage() {
                     <Col md={4}>
                         <Card id='card__container' className="ms-5 p-3">
                             <Container className={`decoration__container bg-${theme.header}`} id="decoration__container"></Container>
-                            {/* {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image pb-2'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'} */}
-                            {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`https://mysterious-retreat-85632.herokuapp.com/static/${info.img}`} className='avatar__image pb-2'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
+                            {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image pb-2'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
+                            {/* {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`https://mysterious-retreat-85632.herokuapp.com/static/${info.img}`} className='avatar__image pb-2'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'} */}
                             <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
                                 <Button className="py-0 mb-2" onClick={handleShow3}>Editar imagen</Button>
                                 {info ? <Card.Title>{info.name}</Card.Title> : ''}

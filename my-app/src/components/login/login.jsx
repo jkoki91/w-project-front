@@ -23,16 +23,16 @@ function Login() {
             email: e.target.email.value,
             password: e.target.password.value,
         }
-        // fetch('http://localhost:4000/auth/login', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/auth/login', {
+        fetch('http://localhost:4000/auth/login', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/auth/login', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: { 'Content-Type': 'application/json' }
         })
             .then(d => d.json())
             .then((data) => {
-                // fetch('http://localhost:4000/users', {
-                fetch('https://mysterious-retreat-85632.herokuapp.com/users', {    
+                fetch('http://localhost:4000/users', {
+                // fetch('https://mysterious-retreat-85632.herokuapp.com/users', {    
                     method: 'GET',
                     headers: { 'Authorization': `Bearer ${data.access_token}` }
                 })

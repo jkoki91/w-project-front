@@ -16,8 +16,8 @@ export default function MainUserCard() {
     const token = localStorage.getItem('access_token')
     const [info, updateInfo] = useState()
     useEffect(() => {
-        // fetch('http://localhost:4000/users', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/users', {
+        fetch('http://localhost:4000/users', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/users', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -32,8 +32,8 @@ export default function MainUserCard() {
         <Col md={4}>
             <Card className='card__container' >
                 <Container className={`decoration__container bg-${theme.header}`} id="main__decoration__container"></Container>
-                {/* {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'} */}
-                {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`https://mysterious-retreat-85632.herokuapp.com/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
+                {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`http://localhost:4000/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'}
+                {/* {info?info.img!==''?<Card.Img as={() => <Image roundedCircle src={`https://mysterious-retreat-85632.herokuapp.com/static/${info.img}`} className='avatar__image'></Image>} />:<Card.Img as={() => <Image roundedCircle src={avatar} className='avatar__image'></Image>} />:'cargando'} */}
                 {/* <Card.Img as={() => <Image roundedCircle src={info?`http://localhost:4000/static/${info.img}`:avatar} className='avatar__image'></Image>} /> */}
                 <Card.Body className='mt-3 d-flex flex-column justify-content-center align-items-center'>
                     {info ? <Card.Title className='mt-3'>{info.name}</Card.Title> : ''}

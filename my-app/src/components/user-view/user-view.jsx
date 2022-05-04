@@ -12,8 +12,8 @@ function UserViewCard(props) {
     let [disp2,setDisp2]=useState('none')
 
     useEffect(() => {
-        // fetch('http://localhost:4000/users', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/users', {
+        fetch('http://localhost:4000/users', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/users', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         })
@@ -36,8 +36,8 @@ function UserViewCard(props) {
             data: followArr,
         }
         console.log(setField)
-        // fetch(`http://localhost:4000/users/follow/${info._id}`, {
-        fetch(`https://mysterious-retreat-85632.herokuapp.com/users/follow/${info._id}`, {    
+        fetch(`http://localhost:4000/users/follow/${info._id}`, {
+        // fetch(`https://mysterious-retreat-85632.herokuapp.com/users/follow/${info._id}`, {    
             method: 'PATCH',
             body: JSON.stringify(setField),
             headers: {
@@ -56,8 +56,8 @@ function UserViewCard(props) {
                 data: followersArr,
             }
             
-        // fetch(`http://localhost:4000/users/followers/${props.id}`, {
-        fetch(`https://mysterious-retreat-85632.herokuapp.com/users/followers/${props.id}`, {
+        fetch(`http://localhost:4000/users/followers/${props.id}`, {
+        // fetch(`https://mysterious-retreat-85632.herokuapp.com/users/followers/${props.id}`, {
             method: 'PATCH',
             body: JSON.stringify(setField2),
             headers: {
@@ -73,8 +73,8 @@ function UserViewCard(props) {
     return (
         <Card className='d-flex flex-row mt-2 mb-3 p-2' style={{ width: '28rem' }}>
             {props.img?
-            <Card.Img style={{ width: '35%' }} variant="top" src={`https://mysterious-retreat-85632.herokuapp.com/static/${props.img}`}/>:
-            // <Card.Img style={{ width: '35%' }} variant="top" src={`http://localhost:4000/static/${props.img}`}/>:
+            // <Card.Img style={{ width: '35%' }} variant="top" src={`https://mysterious-retreat-85632.herokuapp.com/static/${props.img}`}/>:
+            <Card.Img style={{ width: '35%' }} variant="top" src={`http://localhost:4000/static/${props.img}`}/>:
             <Card.Img style={{ width: '35%' }} variant="top" src={avatar}/>}
             <Card.Body className='ms-5' style={{ width: '60%' }}>
                 <Card.Title>{props.name}</Card.Title>

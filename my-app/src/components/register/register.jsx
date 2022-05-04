@@ -24,8 +24,8 @@ function Register({onAction}) {
             followers:[]
         }
         console.log(user)
-        // fetch('http://localhost:4000/auth/register', {
-        fetch('https://mysterious-retreat-85632.herokuapp.com/auth/register', {
+        fetch('http://localhost:4000/auth/register', {
+        // fetch('https://mysterious-retreat-85632.herokuapp.com/auth/register', {
             method: 'POST',
             body: JSON.stringify(user),
             headers: { 'Content-Type': 'application/json' }

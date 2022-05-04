@@ -10,8 +10,8 @@ function Post(props) {
                 <Col md={12}>
                     <Card className='m-0 me-3 mb-5'>
                         <Card.Header as="h5" className='p-3 ps-3'>{props.name}</Card.Header>
-                        {/* <Card.Img className='p-3' variant="top" src={`http://localhost:4000/static/${props.img}`} /> */}
-                        <Card.Img className='p-3' variant="top" src={`https://mysterious-retreat-85632.herokuapp.com/static/${props.img}`} />
+                        <Card.Img className='p-3' variant="top" src={`http://localhost:4000/static/${props.img}`} />
+                        {/* <Card.Img className='p-3' variant="top" src={`https://mysterious-retreat-85632.herokuapp.com/static/${props.img}`} /> */}
                         <Card.Body className='ms-4' >
                             <Card.Title>{props.title}</Card.Title>
                             <Card.Text>
